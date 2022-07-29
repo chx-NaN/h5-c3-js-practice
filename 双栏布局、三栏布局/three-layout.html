@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三栏布局</title>
+    <style>
+        /* .left, .mid, .right {
+            height: 200px;
+        }
+        .left {
+            float: left;
+            width: 200px;
+            background-color: aqua;
+        }
+        .mid {
+            background-color: aquamarine; */
+            /* margin-left: 200px;
+            margin-right: 200px; */
+        /* }
+        .right {
+            float: right;
+            width: 200px;     
+            background-color: antiquewhite;
+        } */
+
+        /* 方法2 */
+        /* .left, .mid, .right {
+            height: 200px;
+        }
+        .box {
+            position: relative;
+        }
+        .left {
+            position: absolute;
+            width: 200px;
+            background-color: aqua;
+        }
+        .right {
+            position: absolute;
+            width: 200px;
+            background-color: antiquewhite;
+            right: 0;
+            top: 0;
+        }
+        .mid {
+            background-color: aquamarine;
+            margin-left: 200px;
+            margin-right: 200px;
+        } */
+
+        /* 方法3 */
+        .left, .mid, .right {
+            height: 200px;
+        }
+        .box {
+            display: flex;
+        }
+        .left {
+            width: 200px;
+            background-color: aqua;
+        }
+        .right {
+            width: 200px;
+            background-color: antiquewhite;
+        }
+        .mid {
+            flex: 1;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <!-- 方法1 -->
+    <!-- <div class="box">
+        <div class="left">左</div>
+        <div class="right">右</div> -->
+        <!-- 此处注意！！！浮动只会影响他后面的盒子，并不会对之前的盒子进行影响。所以自适应区域放在最后 -->
+        <!-- <div class="mid">中</div>
+    </div> -->
+
+    <!-- 方法2 -->
+    <!-- <div class="box">
+        <div class="left">左</div>
+        <div class="mid">中</div>
+        <div class="right">右</div>
+    </div> -->
+
+    <!-- 方法3 -->
+    <div class="box">
+        <div class="left">左</div>
+        <div class="mid">中</div>
+        <div class="right">右</div>
+    </div>
+</body>
+</html>
