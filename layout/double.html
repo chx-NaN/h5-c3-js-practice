@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双栏布局</title>
+    <style>
+        /* 方法1 */
+        /* .left {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+
+        }
+        .right {
+            width: 100%;
+            height: 200px;
+            background-color: antiquewhite;
+        } */
+
+        /* 方法2 */
+        /* .f {
+            position: relative;
+        }
+        .left {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .right {
+            width: 100%;
+            height: 200px;
+            background-color: antiquewhite;
+            margin-left: 200px;
+        } */
+
+        /* 方法3 */
+        .f {
+            display: flex;
+        }
+        .left {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .right {
+            /* width: 100%; */
+            flex: 1;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <!-- 方法1 -->
+    <!-- 设置左侧盒子浮动，设置右侧盒子宽度为100% -->
+    <!-- <div class="f">
+        <div class="left">左</div>
+        <div class="right">右</div>
+    </div> -->
+
+    <!-- 方法2 -->
+    <!-- 给父级盒子添加position：relative，固定一侧的盒子position：absolute，另一侧宽度100%，
+        但是要给右侧盒子添加margin-left：左侧盒子宽度，
+        不然就会右侧盒子的宽度为整个浏览器的宽度 -->
+    <!-- <div class="f">
+        <div class="left">左</div>
+        <div class="right">右</div>
+    </div> -->
+
+
+    <!-- 方法3 -->
+    <div class="f">
+        <div class="left">左</div>
+        <div class="right">右</div>
+    </div>
+
+</body>
+</html> 
