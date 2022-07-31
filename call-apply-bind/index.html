@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call、apply、bind</title>
+</head>
+<body>
+    <script>
+        // let dog = {
+        //     name: "旺财",
+        //     sayName() {
+        //         console.log("我是" + this.name);
+        //     },
+        //     eat(food) {
+        //         console.log("我喜欢吃" + food);
+        //     }
+        // }
+        // let cat= {
+        //     name: "喵喵",
+        // }
+        // dog.sayName();  //我是旺财
+        // dog.sayName.call(cat); //我是喵喵
+        // dog.eat("骨头");    //我喜欢吃骨头
+        // dog.eat.call(cat,'鱼肉');  //我喜欢吃鱼肉
+        // dog.eat.apply(cat,["鱼肉"]); //我喜欢吃鱼肉
+        // dog.eat.bind(cat,"鱼肉")(); //我喜欢吃鱼肉
+        
+        // 继承：子类可以使用父类的方法
+        function Animal() {
+            this.eat = function() {
+                console.log("吃东西");
+            }
+        }
+        function Bird() {
+            this.f = function() {
+                console.log("起飞");
+            }
+        }
+        function Cat() {
+            // this指向小cat
+            // 多重继承
+            Animal.call(this);
+            Bird.call(this);
+            this.sayName = function() {
+                console.log("请输出自己的名字");
+            }
+        }
+        let cat = new Cat();
+        cat.eat()   //吃东西
+        cat.sayName() //请输出自己的名字
+        cat.f() //起飞
+    </script>
+</body>
+</html>
